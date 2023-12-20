@@ -21,7 +21,7 @@ function complete() {
 
 // Save Quote to Azure Blob Storage
 async function saveQuoteToBlobStorage(quoteData) {
-    const blobStorageUrl = 'YOUR_BLOB_STORAGE_URL'; // Replace with your Blob Storage URL
+    const blobStorageUrl = 'https://piyush1208.blob.core.windows.net/quotes'; // Replace with your Blob Storage URL
     try {
         await fetch(blobStorageUrl, {
             method: 'POST',
@@ -37,7 +37,7 @@ async function saveQuoteToBlobStorage(quoteData) {
 
 // Trigger Sentiment Analysis Azure Function
 async function triggerSentimentAnalysis(quote) {
-    const functionUrl = 'YOUR_AZURE_FUNCTION_URL'; // Replace with your Azure Function URL
+    const functionUrl = 'https://quote-generator-piyush.azurewebsites.net'; // Replace with your Azure Function URL
     try {
         await fetch(functionUrl, {
             method: 'POST',
